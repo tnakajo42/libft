@@ -14,17 +14,18 @@
 
 int	ft_isalpha(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (1024);
-	if (c >= 97 && c <= 122)
-		return (1024);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
 	return (0);
 }
 
-/*
-void	main(void)
+
+int	main(void)
 {
 	char	c;
+
 
 	printf("\n---------------isalpha---------------\n\n");
 	c = 'A';
@@ -39,9 +40,9 @@ void	main(void)
 	c = '	';
 	printf("not alpha case isalpha: %d\n", isalpha(c));
 	printf("not alpha case ft_isalpha: %d\n", ft_isalpha(c));
-	c = "";
+	c = ' ';
 	printf("not alpha case isalpha: %d\n", isalpha(c));
 	printf("not alpha case ft_isalpha: %d\n", ft_isalpha(c));
 	printf("\n-------------------------------------\n\n");
+	return (0);
 }
-*/

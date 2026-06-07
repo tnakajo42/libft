@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_atoi(const char *nptr)
 {
@@ -23,13 +24,13 @@ int	ft_atoi(const char *nptr)
 	number = 0;
 	while (nptr[i] == 32 || (9 <= nptr[i] && nptr[i] <= 13))
 		i++;
-	if (nptr[i] == 43 || nptr[i] == 45)
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		if (nptr[i] == 45)
+		if (nptr[i] == '-')
 			sign = -1;
 		i++;
 	}
-	while (48 <= nptr[i] && nptr[i] <= 57)
+	while ('0' <= nptr[i] && nptr[i] <= '9')
 	{
 		number = number * 10 + (nptr[i] - 48);
 		i++;
@@ -37,7 +38,7 @@ int	ft_atoi(const char *nptr)
 	return (number * sign);
 }
 
-/* void	main(void)
+int	main(void)
 {
 	char	*c;
 
@@ -45,11 +46,13 @@ int	ft_atoi(const char *nptr)
 	c = "		123-42";
 	printf("uppercase atoi: %d\n", atoi(c));
 	printf("uppercase ft_atoi: %d\n", ft_atoi(c));
-	c = "---3-2 e";
+	c = "-+-3-2 e";
 	printf("lowercase atoi: %d\n", atoi(c));
 	printf("lowercase ft_atoi: %d\n", ft_atoi(c));
 	c = "+2";
 	printf("not digit case atoi: %d\n", atoi(c));
 	printf("not digit case ft_atoi: %d\n", ft_atoi(c));
 	printf("\n-------------------------------------\n\n");
-} */
+
+	return (0);
+}
